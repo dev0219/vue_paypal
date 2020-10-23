@@ -1,0 +1,64 @@
+{
+  "aob_app_chrome_prefixes": [
+    "cover_letter_"
+  ],
+  "aob_app_widgets": [
+    {
+      "widget_type": "AppProjects",
+      "widget_variation": "AppProjects",
+      "widget_zone": "widget_zone_2",
+      "widget_source": "html",
+      "widget_forms": [
+        {
+          "cover_letter_": [
+            {
+              "chrome_key": "project_title",
+              "field_width": "col-4",
+              "field_id": "",
+              "field_type": "",
+              "field_label": "",
+              "field_placeholder": "",
+              "field_min_length": "",
+              "field_max_length": "",
+              "field_small": "",
+              "field_classes": "",
+              "field_required": "",
+              "field_disabled": "",
+              "field_ready_only": ""
+            },
+            {
+              "chrome_key": "project_title",
+              "field_width": "col-4",
+              "field_id": "",
+              "field_type": "",
+              "field_label": "",
+              "field_placeholder": "",
+              "field_min_length": "",
+              "field_max_length": "",
+              "field_small": "",
+              "field_classes": "",
+              "field_required": "",
+              "field_disabled": "",
+              "field_ready_only": ""
+            },
+            {
+              "chrome_key": "project_title",
+              "field_width": "col-4",
+              "field_id": "",
+              "field_type": "",
+              "field_label": "",
+              "field_placeholder": "",
+              "field_min_length": "",
+              "field_max_length": "",
+              "field_small": "",
+              "field_classes": "",
+              "field_required": "",
+              "field_disabled": "",
+              "field_ready_only": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,827 @@
+<div class="row page-titles">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-4 align-self-center">
+                <div id="project_list" class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary" data-project_id="0">All Projects</button>
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="calendar_time_period" class="btn-group" role="group" aria-label="Basic example">
+                    <button id="view_time_period_month_previous" type="button" class="btn btn-secondary"><i class="fas fa-arrow-left text-success mt-20"></i></button>
+                    <button id="view_time_period_today" type="button" class="btn btn-secondary">January, 2019</button>
+                    <button id="view_time_period_month" type="button" class="btn btn-secondary">Month</button>
+                    <button id="view_time_period_week" type="button" class="btn btn-secondary">Week</button>
+                    <button id="view_time_period_day" type="button" class="btn btn-secondary">Day</button>
+                    <button id="view_time_period_month_future" type="button" class="btn btn-secondary"><i class="fas fa-arrow-right text-success mt-20"></i></button>
+                </div>
+<!--                <div id="report_view_switcher" class="btn-group" role="group" aria-label="Basic example">-->
+<!--                    <button id="view_report_work_log" type="button" class="btn btn-secondary">Work Logs</button>-->
+<!--                    <button id="view_report_payouts" type="button" class="btn btn-secondary" data-section="main_section_payouts"><i class="fas fa-hand-holding-usd mr-2"></i> Payouts</button>-->
+<!--                    <button id="view_report_expenses" type="button" class="btn btn-secondary" data-section="main_section_expenses"><i class="far fa-credit-card mr-2"></i>Expenses</button>-->
+<!--                    <button id="view_report_profits" type="button" class="btn btn-secondary" data-section="main_section_profits"><i class="far fa-money-bill-alt mr-2"></i>Profits</button>-->
+<!--                </div>-->
+            </div>
+            <div class="col-4">
+                <div class="float-right">
+                    <div id="calendar_view_switch" class="float-right ">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button id="view_card" type="button" class="btn btn-secondary">Taskboard</button>
+                            <button id="view_list" type="button" class="btn btn-secondary">List</button>
+                            <button id="view_calendar" type="button" class="btn btn-secondary">Calendar</button>
+                            <button id="view_ghantt" type="button" class="btn btn-secondary">Ghantt</button>
+                        </div>
+                    </div>
+                    <div class="float-right mr-2">
+                        <div class="btn-group">
+                            <button id="btn_create_new" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Create New
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal_project">Project</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal_task">Task</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal_team_member">Team Member</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="main_section_projects" class="row main_section">
+    <div class="col-9">
+        <div class="row">
+            <div class="col-12">
+                <div class="card-group">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 id="counter_total_tasks_open">-</h3>
+                                    <h6 class="card-subtitle">Open</h6></div>
+                                <div class="col-12">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 id="counter_total_tasks_assigned">-</h3>
+                                    <h6 class="card-subtitle">Assigned</h6></div>
+                                <div class="col-12">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 40%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 id="counter_total_tasks_in_review">-</h3>
+                                    <h6 class="card-subtitle">Reviewing</h6></div>
+                                <div class="col-12">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 56%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 id="counter_total_tasks_completed">-</h3>
+                                    <h6 class="card-subtitle">Completed</h6></div>
+                                <div class="col-12">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-inverse" role="progressbar" style="width: 26%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        Open
+                        <!--                                    <div class="card-actions">-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fa fa-arrows-alt"></i></a>-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fas fa-cog"></i></a>-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fa fa-plus"></i></a>-->
+                        <!--                                    </div>-->
+                    </div>
+                    <div class="card-body collapse show">
+                        <ul id="list_tasks_open" data-task_status="open" class="drop_zone droppable sortable  list-task todo-list list-group m-b-0" data-role="tasklist">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        Assigned
+                        <!--                                    <div class="card-actions">-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fa fa-arrows-alt"></i></a>-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fas fa-cog"></i></a>-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fa fa-plus"></i></a>-->
+                        <!--                                    </div>-->
+                    </div>
+                    <div class="card-body collapse show">
+                        <ul id="list_tasks_assigned" data-task_status="assigned" class="drop_zone droppable sortable list-task todo-list list-group m-b-0" data-role="tasklist">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        In Review
+                        <!--                                    <div class="card-actions">-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fa fa-arrows-alt"></i></a>-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fas fa-cog"></i></a>-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fa fa-plus"></i></a>-->
+                        <!--                                    </div>-->
+                    </div>
+                    <div class="card-body collapse show">
+                        <ul id="list_tasks_in_review" data-task_status="in_review" class="drop_zone droppable sortable list-task todo-list list-group m-b-0" data-role="tasklist">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        Completed
+                        <!--                                    <div class="card-actions">-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fa fa-arrows-alt"></i></a>-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fas fa-cog"></i></a>-->
+                        <!--                                        <a class="" data-action="collapse"><i class="fa fa-plus"></i></a>-->
+                        <!--                                    </div>-->
+                    </div>
+                    <div class="card-body collapse show">
+                        <ul id="list_tasks_completed" data-task_status="completed" class="drop_zone droppable sortable list-task todo-list list-group m-b-0" data-role="tasklist">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="row">
+            <div id="counter_income_today" class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Today's Income</h4>
+                        <div class="text-right">
+                            <h3 class="font-light"><i class="fas fa-arrow-up text-success mt-20"></i> $120</h3>
+                        </div>
+                        <span class="text-success float-right">Goal $500</span><span class="text-success">20% of Goal</span>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="counter_income_week" class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">This Week</h4>
+                        <div class="text-right">
+                            <h3 class="font-light"><i class="fas fa-arrow-up text-success mt-20"></i> $1,200</h3>
+                        </div>
+                        <span class="text-success float-right">Goal $1,000</span><span class="text-success">20% of Goal</span>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="counter_income_month" class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">This Month</h4>
+                        <div class="text-right">
+                            <h3 class="font-light"><i class="fas fa-arrow-up text-success mt-20"></i> $10,000</h3>
+                        </div>
+                        <span class="text-success float-right">Goal $5,000</span><span class="text-success">20% of Goal</span>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="counter_income_year" class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">This Year</h4>
+                        <div class="text-right">
+                            <h3 class="font-light"><i class="fas fa-arrow-up text-success mt-20"></i> $120,000</h3>
+                        </div>
+                        <span class="text-success float-right">Goal $150,000</span><span class="text-success">20% of Goal</span>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal_project" class="modal" data-current_tab="" data-project_id="" data-task_id="" data-team_member_id="" tabindex="-1" role="dialog" aria-labelledby="modal_project" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card">
+                    <ul class="nav nav-tabs customtab" role="tablist">
+                        <li id="li_modal_create_new_tab_projects" class="nav-item modal_create_new_tab_item"><a class="nav-link active" data-toggle="tab" href="#modal_create_new_tab_projects" role="tab"><span class="hidden-xs-down">Project</span></a></li>
+                        <li id="li_modal_create_new_tasks" class="nav-item modal_create_new_tab_item"><a class="nav-link" data-toggle="tab" href="#modal_create_new_tab_tasks" role="tab"> <span class="hidden-xs-down">Task</span></a></li>
+                        <li id="li_modal_create_new_team_member" class="nav-item modal_create_new_tab_item"><a class="nav-link" data-toggle="tab" href="#modal_create_new_tab_team_member" role="tab"><span class="hidden-xs-down">Team Member</span></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="modal_create_new_tab_projects" role="tabpanel">
+                            <div class="p-20">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <form id="form_new_project" action="#" class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Contract Type</small>
+                                                        <select id="project_contract_type" class="form-control custom-select">
+                                                            <option>Select</option>
+                                                            <option>Hourly</option>
+                                                            <option>Fixed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Hourly Rate / Budget Amount</small>
+                                                        <input id="project_amount" type="text" class="form-control" placeholder="$10,000">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Start Date</small>
+                                                        <input id="project_date_start" type="date" class="form-control" placeholder="Start Date">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Due Date</small>
+                                                        <input id="project_date_due" type="date" class="form-control" placeholder="Due Date">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Project Type</small>
+                                                        <select id="project_project_type" class="form-control custom-select">
+                                                            <option>Select</option>
+                                                            <option>New Site</option>
+                                                            <option>Maintenance</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Platform</small>
+                                                        <select id="project_platform" class="form-control custom-select">
+                                                            <option>Select</option>
+                                                            <option>WordPress</option>
+                                                            <option>Laravel</option>
+                                                            <option>React</option>
+                                                            <option>NodeJS</option>
+                                                            <option>Shopify</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Client Name</small>
+                                                        <input id="project_client_name" type="text" class="form-control" placeholder="Client Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Website</small>
+                                                        <input id="project_website" type="text" class="form-control" placeholder="Website">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Email</small>
+                                                        <input id="project_email" type="text" class="form-control" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <small>Phone</small>
+                                                        <input id="project_phone" type="text" class="form-control" placeholder="555-555-5555">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <small>Time Zone</small>
+                                                        <select id="project_time_zone" class="form-control custom-select">
+                                                            <option>Select</option>
+                                                            <option>EST - Eastern Time Zone</option>
+                                                            <option>CST - Central Time Zone</option>
+                                                            <option>MST - Mountain Time Zone</option>
+                                                            <option>PST - Pacific Time Zone</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <small>Notes...</small>
+                                                        <textarea id="project_notes" type="text" class="form-control" placeholder="Notes..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button id="btn_form_new_project" type="button" class="btn btn-info waves-effect  btn-block">Add Project</button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane  p-20" id="modal_create_new_tab_team_member" role="tabpanel">
+                            <form id="form_new_team_member" action="#" class="form-horizontal">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <small>Position</small>
+                                            <select id="team_member_position" class="form-control custom-select">
+                                                <option>Select</option>
+                                                <option>Developer</option>
+                                                <option>Designer</option>
+                                                <option>Virtual Assistant</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <small>Name</small>
+                                            <input id="team_member_name" type="text" class="form-control" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <small>Hourly Rate</small>
+                                            <input id="team_member_hourly_rate" type="number" class="form-control" placeholder="15">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <small>Skype Username</small>
+                                            <input id="team_member_skype_name" type="text" class="form-control" placeholder="awesome123">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <small>Freelancer URL</small>
+                                            <input id="team_member_freelancer_url" type="text" class="form-control" placeholder="freelancer.com/profile/awesome123">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <small>Email</small>
+                                            <input id="team_member_email" type="text" class="form-control" placeholder="awesome123@gmail.com">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <small>Country</small>
+                                            <select id="team_member_country" class="form-control custom-select">
+                                                <option value="AF">Afghanistan</option>
+                                                <option value="AX">Åland Islands</option>
+                                                <option value="AL">Albania</option>
+                                                <option value="DZ">Algeria</option>
+                                                <option value="AS">American Samoa</option>
+                                                <option value="AD">Andorra</option>
+                                                <option value="AO">Angola</option>
+                                                <option value="AI">Anguilla</option>
+                                                <option value="AQ">Antarctica</option>
+                                                <option value="AG">Antigua and Barbuda</option>
+                                                <option value="AR">Argentina</option>
+                                                <option value="AM">Armenia</option>
+                                                <option value="AW">Aruba</option>
+                                                <option value="AU">Australia</option>
+                                                <option value="AT">Austria</option>
+                                                <option value="AZ">Azerbaijan</option>
+                                                <option value="BS">Bahamas</option>
+                                                <option value="BH">Bahrain</option>
+                                                <option value="BD">Bangladesh</option>
+                                                <option value="BB">Barbados</option>
+                                                <option value="BY">Belarus</option>
+                                                <option value="BE">Belgium</option>
+                                                <option value="BZ">Belize</option>
+                                                <option value="BJ">Benin</option>
+                                                <option value="BM">Bermuda</option>
+                                                <option value="BT">Bhutan</option>
+                                                <option value="BO">Bolivia, Plurinational State of</option>
+                                                <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                                                <option value="BA">Bosnia and Herzegovina</option>
+                                                <option value="BW">Botswana</option>
+                                                <option value="BV">Bouvet Island</option>
+                                                <option value="BR">Brazil</option>
+                                                <option value="IO">British Indian Ocean Territory</option>
+                                                <option value="BN">Brunei Darussalam</option>
+                                                <option value="BG">Bulgaria</option>
+                                                <option value="BF">Burkina Faso</option>
+                                                <option value="BI">Burundi</option>
+                                                <option value="KH">Cambodia</option>
+                                                <option value="CM">Cameroon</option>
+                                                <option value="CA">Canada</option>
+                                                <option value="CV">Cape Verde</option>
+                                                <option value="KY">Cayman Islands</option>
+                                                <option value="CF">Central African Republic</option>
+                                                <option value="TD">Chad</option>
+                                                <option value="CL">Chile</option>
+                                                <option value="CN">China</option>
+                                                <option value="CX">Christmas Island</option>
+                                                <option value="CC">Cocos (Keeling) Islands</option>
+                                                <option value="CO">Colombia</option>
+                                                <option value="KM">Comoros</option>
+                                                <option value="CG">Congo</option>
+                                                <option value="CD">Congo, the Democratic Republic of the</option>
+                                                <option value="CK">Cook Islands</option>
+                                                <option value="CR">Costa Rica</option>
+                                                <option value="CI">Côte d'Ivoire</option>
+                                                <option value="HR">Croatia</option>
+                                                <option value="CU">Cuba</option>
+                                                <option value="CW">Curaçao</option>
+                                                <option value="CY">Cyprus</option>
+                                                <option value="CZ">Czech Republic</option>
+                                                <option value="DK">Denmark</option>
+                                                <option value="DJ">Djibouti</option>
+                                                <option value="DM">Dominica</option>
+                                                <option value="DO">Dominican Republic</option>
+                                                <option value="EC">Ecuador</option>
+                                                <option value="EG">Egypt</option>
+                                                <option value="SV">El Salvador</option>
+                                                <option value="GQ">Equatorial Guinea</option>
+                                                <option value="ER">Eritrea</option>
+                                                <option value="EE">Estonia</option>
+                                                <option value="ET">Ethiopia</option>
+                                                <option value="FK">Falkland Islands (Malvinas)</option>
+                                                <option value="FO">Faroe Islands</option>
+                                                <option value="FJ">Fiji</option>
+                                                <option value="FI">Finland</option>
+                                                <option value="FR">France</option>
+                                                <option value="GF">French Guiana</option>
+                                                <option value="PF">French Polynesia</option>
+                                                <option value="TF">French Southern Territories</option>
+                                                <option value="GA">Gabon</option>
+                                                <option value="GM">Gambia</option>
+                                                <option value="GE">Georgia</option>
+                                                <option value="DE">Germany</option>
+                                                <option value="GH">Ghana</option>
+                                                <option value="GI">Gibraltar</option>
+                                                <option value="GR">Greece</option>
+                                                <option value="GL">Greenland</option>
+                                                <option value="GD">Grenada</option>
+                                                <option value="GP">Guadeloupe</option>
+                                                <option value="GU">Guam</option>
+                                                <option value="GT">Guatemala</option>
+                                                <option value="GG">Guernsey</option>
+                                                <option value="GN">Guinea</option>
+                                                <option value="GW">Guinea-Bissau</option>
+                                                <option value="GY">Guyana</option>
+                                                <option value="HT">Haiti</option>
+                                                <option value="HM">Heard Island and McDonald Islands</option>
+                                                <option value="VA">Holy See (Vatican City State)</option>
+                                                <option value="HN">Honduras</option>
+                                                <option value="HK">Hong Kong</option>
+                                                <option value="HU">Hungary</option>
+                                                <option value="IS">Iceland</option>
+                                                <option value="IN">India</option>
+                                                <option value="ID">Indonesia</option>
+                                                <option value="IR">Iran, Islamic Republic of</option>
+                                                <option value="IQ">Iraq</option>
+                                                <option value="IE">Ireland</option>
+                                                <option value="IM">Isle of Man</option>
+                                                <option value="IL">Israel</option>
+                                                <option value="IT">Italy</option>
+                                                <option value="JM">Jamaica</option>
+                                                <option value="JP">Japan</option>
+                                                <option value="JE">Jersey</option>
+                                                <option value="JO">Jordan</option>
+                                                <option value="KZ">Kazakhstan</option>
+                                                <option value="KE">Kenya</option>
+                                                <option value="KI">Kiribati</option>
+                                                <option value="KP">Korea, Democratic People's Republic of</option>
+                                                <option value="KR">Korea, Republic of</option>
+                                                <option value="KW">Kuwait</option>
+                                                <option value="KG">Kyrgyzstan</option>
+                                                <option value="LA">Lao People's Democratic Republic</option>
+                                                <option value="LV">Latvia</option>
+                                                <option value="LB">Lebanon</option>
+                                                <option value="LS">Lesotho</option>
+                                                <option value="LR">Liberia</option>
+                                                <option value="LY">Libya</option>
+                                                <option value="LI">Liechtenstein</option>
+                                                <option value="LT">Lithuania</option>
+                                                <option value="LU">Luxembourg</option>
+                                                <option value="MO">Macao</option>
+                                                <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                                                <option value="MG">Madagascar</option>
+                                                <option value="MW">Malawi</option>
+                                                <option value="MY">Malaysia</option>
+                                                <option value="MV">Maldives</option>
+                                                <option value="ML">Mali</option>
+                                                <option value="MT">Malta</option>
+                                                <option value="MH">Marshall Islands</option>
+                                                <option value="MQ">Martinique</option>
+                                                <option value="MR">Mauritania</option>
+                                                <option value="MU">Mauritius</option>
+                                                <option value="YT">Mayotte</option>
+                                                <option value="MX">Mexico</option>
+                                                <option value="FM">Micronesia, Federated States of</option>
+                                                <option value="MD">Moldova, Republic of</option>
+                                                <option value="MC">Monaco</option>
+                                                <option value="MN">Mongolia</option>
+                                                <option value="ME">Montenegro</option>
+                                                <option value="MS">Montserrat</option>
+                                                <option value="MA">Morocco</option>
+                                                <option value="MZ">Mozambique</option>
+                                                <option value="MM">Myanmar</option>
+                                                <option value="NA">Namibia</option>
+                                                <option value="NR">Nauru</option>
+                                                <option value="NP">Nepal</option>
+                                                <option value="NL">Netherlands</option>
+                                                <option value="NC">New Caledonia</option>
+                                                <option value="NZ">New Zealand</option>
+                                                <option value="NI">Nicaragua</option>
+                                                <option value="NE">Niger</option>
+                                                <option value="NG">Nigeria</option>
+                                                <option value="NU">Niue</option>
+                                                <option value="NF">Norfolk Island</option>
+                                                <option value="MP">Northern Mariana Islands</option>
+                                                <option value="NO">Norway</option>
+                                                <option value="OM">Oman</option>
+                                                <option value="PK">Pakistan</option>
+                                                <option value="PW">Palau</option>
+                                                <option value="PS">Palestinian Territory, Occupied</option>
+                                                <option value="PA">Panama</option>
+                                                <option value="PG">Papua New Guinea</option>
+                                                <option value="PY">Paraguay</option>
+                                                <option value="PE">Peru</option>
+                                                <option value="PH">Philippines</option>
+                                                <option value="PN">Pitcairn</option>
+                                                <option value="PL">Poland</option>
+                                                <option value="PT">Portugal</option>
+                                                <option value="PR">Puerto Rico</option>
+                                                <option value="QA">Qatar</option>
+                                                <option value="RE">Réunion</option>
+                                                <option value="RO">Romania</option>
+                                                <option value="RU">Russian Federation</option>
+                                                <option value="RW">Rwanda</option>
+                                                <option value="BL">Saint Barthélemy</option>
+                                                <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                                                <option value="KN">Saint Kitts and Nevis</option>
+                                                <option value="LC">Saint Lucia</option>
+                                                <option value="MF">Saint Martin (French part)</option>
+                                                <option value="PM">Saint Pierre and Miquelon</option>
+                                                <option value="VC">Saint Vincent and the Grenadines</option>
+                                                <option value="WS">Samoa</option>
+                                                <option value="SM">San Marino</option>
+                                                <option value="ST">Sao Tome and Principe</option>
+                                                <option value="SA">Saudi Arabia</option>
+                                                <option value="SN">Senegal</option>
+                                                <option value="RS">Serbia</option>
+                                                <option value="SC">Seychelles</option>
+                                                <option value="SL">Sierra Leone</option>
+                                                <option value="SG">Singapore</option>
+                                                <option value="SX">Sint Maarten (Dutch part)</option>
+                                                <option value="SK">Slovakia</option>
+                                                <option value="SI">Slovenia</option>
+                                                <option value="SB">Solomon Islands</option>
+                                                <option value="SO">Somalia</option>
+                                                <option value="ZA">South Africa</option>
+                                                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                                <option value="SS">South Sudan</option>
+                                                <option value="ES">Spain</option>
+                                                <option value="LK">Sri Lanka</option>
+                                                <option value="SD">Sudan</option>
+                                                <option value="SR">Suriname</option>
+                                                <option value="SJ">Svalbard and Jan Mayen</option>
+                                                <option value="SZ">Swaziland</option>
+                                                <option value="SE">Sweden</option>
+                                                <option value="CH">Switzerland</option>
+                                                <option value="SY">Syrian Arab Republic</option>
+                                                <option value="TW">Taiwan, Province of China</option>
+                                                <option value="TJ">Tajikistan</option>
+                                                <option value="TZ">Tanzania, United Republic of</option>
+                                                <option value="TH">Thailand</option>
+                                                <option value="TL">Timor-Leste</option>
+                                                <option value="TG">Togo</option>
+                                                <option value="TK">Tokelau</option>
+                                                <option value="TO">Tonga</option>
+                                                <option value="TT">Trinidad and Tobago</option>
+                                                <option value="TN">Tunisia</option>
+                                                <option value="TR">Turkey</option>
+                                                <option value="TM">Turkmenistan</option>
+                                                <option value="TC">Turks and Caicos Islands</option>
+                                                <option value="TV">Tuvalu</option>
+                                                <option value="UG">Uganda</option>
+                                                <option value="UA">Ukraine</option>
+                                                <option value="AE">United Arab Emirates</option>
+                                                <option value="GB">United Kingdom</option>
+                                                <option value="US">United States</option>
+                                                <option value="UM">United States Minor Outlying Islands</option>
+                                                <option value="UY">Uruguay</option>
+                                                <option value="UZ">Uzbekistan</option>
+                                                <option value="VU">Vanuatu</option>
+                                                <option value="VE">Venezuela, Bolivarian Republic of</option>
+                                                <option value="VN">Viet Nam</option>
+                                                <option value="VG">Virgin Islands, British</option>
+                                                <option value="VI">Virgin Islands, U.S.</option>
+                                                <option value="WF">Wallis and Futuna</option>
+                                                <option value="EH">Western Sahara</option>
+                                                <option value="YE">Yemen</option>
+                                                <option value="ZM">Zambia</option>
+                                                <option value="ZW">Zimbabwe</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <small>Time Zone</small>
+                                            <select id="team_member_time_zone" class="form-control custom-select">
+                                                <option>Select</option>
+                                                <option>EST - Eastern Time Zone</option>
+                                                <option>CST - Central Time Zone</option>
+                                                <option>MST - Mountain Time Zone</option>
+                                                <option>PST - Pacific Time Zone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <small>Notes...</small>
+                                            <textarea id="team_member_notes" type="text" class="form-control" placeholder="Notes..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button id="btn_form_new_team_member" type="button" class="btn btn-info waves-effect  btn-block">Add Team Member</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane p-20" id="modal_create_new_tab_tasks" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <form id="form_new_task" action="#" class="form-horizontal">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <small>Project Name</small>
+                                                    <select id="task_project" class="form-control custom-select">
+                                                        <option value="">Select</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <small>Assign To</small>
+                                                    <select id="task_assigned_to" class="form-control custom-select">
+                                                        <option>Select</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <input id="task_title" type="text" class="form-control" placeholder="Title">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <textarea id="task_description" type="text" class="form-control" placeholder="Task Description..."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <small>Start Date</small>
+                                                    <input id="task_date_start" type="date" class="form-control" placeholder="Start Date">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <small>Due Date</small>
+                                                    <input id="task_date_due" type="date" class="form-control" placeholder="Due Date">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <small>Hours Billed - Client</small>
+                                                    <input id="task_hours_billed_client" type="number" class="form-control" placeholder="15">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <small>Hours Allocated - Team</small>
+                                                    <input id="task_hours_allocated" type="number" class="form-control" placeholder="10">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <small>Percentage Complete</small>
+                                                    <input id="task_percentage_completed" type="number" class="form-control" placeholder="0">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover no-wrap">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>Client Billed</th>
+                                                                    <th>Payout</th>
+                                                                    <th>Profit</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td><span id="calc_new_task_amount_client_billed" class="text-success"></span></td>
+                                                                    <td><span id="calc_new_task_amount_payout" class="text-success"></span></td>
+                                                                    <td><span id="calc_new_task_amount_profit" class="text-success"></span></td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button id="btn_form_new_task" type="button" class="btn btn-info waves-effect btn-block">Add Task</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<li id="node_task" class="task draggable list-group-item node" data-role="task">
+    <div class="row mb-1">
+        <div class="col-12">
+            <span id="node_task_due_in" class="badge badge-pill badge-info float-right"></span>
+            <span id="node_task_profit" class="badge badge-pill badge-success float-right"> </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h6 id="node_task_title" class="">Title goes here</h6>
+            <div class="pull-right">
+                <small id="node_task_team_member">TM - Perkins</small>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <div class="progress mt-4">
+                <div id="node_task_progress_bar" class="progress-bar bg-success" role="progressbar" style="width: 48%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div id="node_task_progress_percentage" class="pt-3"></div>
+        </div>
+    </div>
+</li>

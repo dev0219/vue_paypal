@@ -1,0 +1,54 @@
+   
+   $url = $_SERVER['REQUEST_URI'];   
+   //exit($url);
+
+if($url == "/portfolio/auto-service/"){wp_redirect("https://autoservice.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/architecture/"){wp_redirect("https://architecture.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/beauty-salon/"){wp_redirect("https://beautysalon.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/business/"){wp_redirect("https://business.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/corporate/"){wp_redirect("https://corporate.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/dentist/"){wp_redirect("https://dentist.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/charity/"){wp_redirect("https://charity.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/workspace/"){wp_redirect("https://workspace.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/catering/"){wp_redirect("https://catering.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/construction/"){wp_redirect("https://construction.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/consulting/"){wp_redirect("https://consulting.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/digital-agency/"){wp_redirect("https://digitalagency.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/ebook/"){wp_redirect("https://ebook.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/elder-care/"){wp_redirect("https://eldercare.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/event/"){wp_redirect("https://event.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/fashion-blog/"){wp_redirect("https://fashionblog.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/fitness/"){wp_redirect("https://fitness.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/cleaning/"){wp_redirect("https://cleaning.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/furniture-shop/"){wp_redirect("https://furnitureshop.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/gardener/"){wp_redirect("https://gardener.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/hair-salon/"){wp_redirect("https://hairsalon.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/marketing-agency/"){wp_redirect("https://marketingagency.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/software/"){wp_redirect("https://software.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/health-blog/"){wp_redirect("https://healthblog.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/saas/"){wp_redirect("https://saas.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/renewable-energy/"){wp_redirect("https://renewableenergy.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/ngo/"){wp_redirect("https://ngo.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/real-estate/"){wp_redirect("https://realestate.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/pizza/"){wp_redirect("https://pizza.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/rental/"){wp_redirect("https://rental.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/transport/"){wp_redirect("https://transport.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/travel-agency/"){wp_redirect("https://travelagency.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/veterinary/"){wp_redirect("https://veterinary.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/travel-blog/"){wp_redirect("https://travelblog.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/web-design/"){wp_redirect("https://webdesign.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/wedding-planner/"){wp_redirect("https://weddingplanner.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/winery/"){wp_redirect("https://winery.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/home-decor/"){wp_redirect("https://Homedecor.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/hosting/"){wp_redirect("https://hosting.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/jewelry-shop/"){wp_redirect("https://jewelryshop.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/lawyer/"){wp_redirect("https://lawyer.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/make-up-artist/"){wp_redirect("https://makeupartist.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/single-product/"){wp_redirect("https://singleproduct.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/seo-agency/"){wp_redirect("https://seoagency.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/mobile-app/"){wp_redirect("https://mobileapp.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/mobile-app-2/"){wp_redirect("https://mobileapp2.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/moving/"){wp_redirect("https://moving.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/musical-artist/"){wp_redirect("https://musicalartist.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/restaurant/"){wp_redirect("https://restaurant.yourbusinessrocket.com",301); }
+else if($url == "/portfolio/startup/"){wp_redirect("https://startup.yourbusinessrocket.com",301); }

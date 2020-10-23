@@ -1,0 +1,89 @@
+/*================================================================================
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.paypal-button-label-container{
+    display: none!important;
+
+}
+.descript{
+  padding-top:1px;
+  margin-top:10%;
+  text-align: center;
+}
+
+.paypal-button-text{
+    color: red;
+}
+.paypal_button{
+    background-color: #1e9ff2;
+    width: 90%;
+    border-radius: 10px;
+    margin-left:5%;color:white;font-size: 20px;border:none;padding:10px
+  }
+  .free{
+    background-color:white;color:#1e9ff2;border:1px solid #1e9ff2;width: 90%;
+    border-radius: 10px;font-size: 20px;padding:10px;margin-left:5%;
+  }
+  .pay_container{
+  display:flex;padding-top:2%
+  }
+ 
+  @media only screen and (max-width: 776px) {
+  .pay_row{
+      display: block!important;
+      /* width: 100%!important; */
+      /* margin-left:8% !important; */
+      height: 200px!important;
+    }
+  .free{
+    background-color:white;color:#1e9ff2;border:1px solid #1e9ff2;width: 90%;
+    border-radius: 10px;font-size: 20px;padding:10px;margin-left:0%;
+  }
+  .paypal_button{
+    background-color: #1e9ff2;
+    width: 90%;
+    border-radius: 10px;
+    margin-left:0%;color:white;font-size: 20px;border:none;padding:10px
+  }
+  }
+  @media only screen and (max-width: 776px) {
+    .pay_product{
+    background-color:#fff;
+    margin-left:5px !important;
+    height:100%;
+    width: 100%;
+    box-shadow: 0 2px 18px 1px rgba(49, 53, 72, 0.1);
+    border-radius: .45rem;
+    text-align: center;
+    }
+  }
+  .pay_row{
+    display: flex;
+    width: 100%;
+    margin-left: -0.5%;
+    height: 238px;
+  }
+  .pay_product{
+  background-color:#fff;
+  margin-left:20px;
+  height:100%;
+  width: 100%;
+  box-shadow: 0 2px 18px 1px rgba(49, 53, 72, 0.1);
+  border-radius: .45rem;
+  }
+  .pay_description{
+  margin-top:10px
+  }
+  .pay_price{
+    margin-bottom:8%
+  }
+  #paypal-1{
+  width:80%;margin-left:10%
+  }
